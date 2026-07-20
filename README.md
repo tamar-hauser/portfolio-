@@ -1,6 +1,6 @@
 # Tamar Hauser — Software Engineer Portfolio
 
-Backend Development | Full-Stack| Embedded Systems | Autonomous Navigation 
+Backend Development | Full-Stack | Embedded Systems | Autonomous Navigation 
 ---
 
 ## Projects
