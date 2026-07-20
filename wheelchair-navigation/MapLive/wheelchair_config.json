@@ -1,0 +1,61 @@
+{
+  "hard_blocks": {
+    "highway": ["steps", "motorway", "motorway_link", "trunk", "construction", "abandoned"],
+    "wheelchair": ["no"],
+    "kerb": ["raised"],
+    "barrier": ["stile", "turnstile", "motorcycle_barrier", "kissing_gate", "block"]
+  },
+  "thresholds": {
+    "minimum_width_meters": 0.9,
+    "max_incline_percent": 8.0,
+    "incline_penalty_per_percent": 1.2
+  },
+  "defaults": {
+    "uncertainty_multiplier": 1.2,
+    "fallback_highways": {
+      "footway": 1.0,
+      "pedestrian": 1.0,
+      "residential": 1.1,
+      "living_street": 1.0,
+      "path": 3.0,
+      "track": 4.0
+    }
+  },
+  "surface_multipliers": {
+    "asphalt": 0.9,
+    "paved": 0.9,
+    "concrete": 0.9,
+    "paving_stones": 1.5,
+    "cobblestone": 2.5,
+    "compacted": 1.2,
+    "gravel": 4.0,
+    "sand": 5.0,
+    "dirt": 5.0,
+    "grass": 5.0
+  },
+  "smoothness_multipliers": {
+    "excellent": 0.9,
+    "good": 1.0,
+    "intermediate": 1.2,
+    "bad": 2.0,
+    "very_bad": 3.0,
+    "horrible": 5.0
+  },
+  "incline_string_multipliers": {
+    "flat": 1.0,
+    "up": 1.5,
+    "down": 1.2,
+    "steep": 3.0
+  },
+  "kerb_node_cost_meters": {
+    "lowered": 0.0,
+    "flush": 0.0,
+    "rolled": 2.0,
+    "unknown": 15.0
+  },
+  "crossing_node_cost_meters": {
+    "traffic_signals": 0.0,
+    "uncontrolled": 10.0,
+    "island": -5.0
+  }
+}

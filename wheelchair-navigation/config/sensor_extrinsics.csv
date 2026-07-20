@@ -1,0 +1,12 @@
+sensor,type,x_m,y_m,z_m,roll_rad,pitch_rad,yaw_rad,rate_hz,output_file
+imu,IMU_9_AXIS,0.00,0.00,0.85,0,0,0,100,imu_latest.txt
+accelerometer,ACCELEROMETER_3_AXIS,0.00,0.00,0.85,0,0,0,100,imu_latest.txt
+gyro,GYRO_3_AXIS,0.00,0.00,0.85,0,0,0,100,imu_latest.txt
+left_wheel_encoder,WHEEL_ENCODER,-0.10,0.46,0.25,0,0,0,100,encoder_latest.txt
+right_wheel_encoder,WHEEL_ENCODER,-0.10,-0.46,0.25,0,0,0,100,encoder_latest.txt
+gps,GPS_NMEA,0.00,0.00,0.95,0,0,0,10,gps_nmea_latest.txt
+front_radar,RADAR_TARGET_LEVEL_SIMULATED,0.62,0.00,0.55,0,0,0,20,radar_latest.csv
+rgb_camera,RGB_CAMERA,0.55,0.00,0.82,0,0,0,2,IMG_7257.jpg
+front_lidar,LIDAR_POINT_CLOUD,0.58,0.00,0.48,0,0,0,2,lidar_front_test.pcd
+left_lidar,LIDAR_POINT_CLOUD,0.00,0.48,0.48,0,0,1.5708,2,lidar_left_test.pcd
+right_lidar,LIDAR_POINT_CLOUD,0.00,-0.48,0.48,0,0,-1.5708,2,lidar_right_test.pcd

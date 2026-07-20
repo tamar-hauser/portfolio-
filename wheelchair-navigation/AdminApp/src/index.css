@@ -1,0 +1,80 @@
+:root {
+  --navy:       #1B3967;
+  --navy-dark:  #122951;
+  --blue:       #3E72B8;
+  --light-blue: #7BB8D4;
+  --teal:       #2EB89A;
+  --teal-light: #E6F7F4;
+  --bg:         #EFF6FC;
+  --white:      #FFFFFF;
+  --text:       #1A2E4A;
+  --muted:      #6B8CAE;
+  --border:     #CBE0F0;
+  --danger:     #D94F4F;
+  --danger-bg:  #FEF2F2;
+  --warning:    #D97706;
+  --warning-bg: #FFFBEB;
+  --shadow:     0 2px 12px rgba(27, 57, 103, 0.10);
+  --shadow-lg:  0 8px 32px rgba(27, 57, 103, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+button { cursor: pointer; border: none; font-family: inherit; }
+a      { text-decoration: none; color: inherit; }
+input, select { font-family: inherit; font-size: 14px; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--light-blue); }
+
+/* ── Shared utility classes ── */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-teal    { background: var(--teal-light); color: var(--teal); }
+.badge-warning { background: var(--warning-bg); color: var(--warning); }
+.badge-danger  { background: var(--danger-bg);  color: var(--danger); }
+.badge-muted   { background: var(--bg);         color: var(--muted); }
+
+table { border-collapse: collapse; width: 100%; }
+th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #F0F6FB;
+  color: var(--text);
+  font-size: 13px;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #F5FAFD; }

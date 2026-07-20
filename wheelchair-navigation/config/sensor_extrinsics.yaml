@@ -1,0 +1,96 @@
+# Sensor mounting calibration for autonomous_wheelchair
+# Coordinate convention: wheelchair/body frame, meters, +X forward, +Y left, +Z up.
+# Rotation convention: roll,pitch,yaw in radians, relative to wheelchair/body frame.
+# These values match the Webots world file human_wheelchair_live.wbt.
+
+vehicle_frame: wheelchair_base
+units: meters
+rotation_units: radians
+convention:
+  x: forward
+  y: left
+  z: up
+
+sensors:
+  gps:
+    type: GPS
+    translation: {x: 0.00, y: 0.00, z: 0.95}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 0.0}
+    output_file: gps_nmea_latest.txt
+
+  imu:
+    type: IMU_9_AXIS
+    translation: {x: 0.00, y: 0.00, z: 0.85}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 0.0}
+    output_file: imu_latest.txt
+
+  accelerometer:
+    type: ACCELEROMETER_3_AXIS
+    translation: {x: 0.00, y: 0.00, z: 0.85}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 0.0}
+
+  gyro:
+    type: GYRO_3_AXIS
+    translation: {x: 0.00, y: 0.00, z: 0.85}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 0.0}
+
+  rgb_camera:
+    type: RGB_CAMERA
+    translation: {x: 0.62, y: 0.00, z: 0.45}
+    rotation_rpy: {roll: 0.0, pitch: -0.18, yaw: 0.0}
+    resolution: {width: 640, height: 480}
+    field_of_view_rad: 1.05
+    output_file: IMG_7257.jpg
+
+  front_lidar:
+    type: LIDAR_POINT_CLOUD
+    translation: {x: 0.63, y: 0.00, z: 0.20}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 0.0}
+    horizontal_resolution: 360
+    layers: 8
+    field_of_view_rad: 2.20
+    vertical_field_of_view_rad: 0.35
+    max_range_m: 20.0
+    output_file: lidar_front_test.pcd
+
+  left_lidar:
+    type: LIDAR_POINT_CLOUD
+    translation: {x: 0.00, y: 0.50, z: 0.20}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 1.5708}
+    horizontal_resolution: 180
+    layers: 4
+    field_of_view_rad: 1.57
+    vertical_field_of_view_rad: 0.25
+    max_range_m: 10.0
+    output_file: lidar_left_test.pcd
+
+  right_lidar:
+    type: LIDAR_POINT_CLOUD
+    translation: {x: 0.00, y: -0.50, z: 0.20}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: -1.5708}
+    horizontal_resolution: 180
+    layers: 4
+    field_of_view_rad: 1.57
+    vertical_field_of_view_rad: 0.25
+    max_range_m: 10.0
+    output_file: lidar_right_test.pcd
+
+  front_radar:
+    type: RADAR_TARGET_LEVEL
+    translation: {x: 0.62, y: 0.00, z: 0.45}
+    rotation_rpy: {roll: 0.0, pitch: 0.0, yaw: 0.0}
+    fov_deg: 70
+    max_range_m: 20.0
+    output_file: radar_latest.csv
+
+  left_wheel_encoder:
+    type: WHEEL_ENCODER
+    translation: {x: -0.10, y: 0.46, z: 0.25}
+    wheel_radius_m: 0.34
+    output_file: encoder_latest.txt
+
+  right_wheel_encoder:
+    type: WHEEL_ENCODER
+    translation: {x: -0.10, y: -0.46, z: 0.25}
+    wheel_radius_m: 0.34
+    output_file: encoder_latest.txt

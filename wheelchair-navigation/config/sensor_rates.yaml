@@ -1,0 +1,28 @@
+# Sensor production rates used by wheelchair_controller.py
+# Webots basicTimeStep is 10 ms, so 100 Hz is possible for IMU and encoders.
+
+rates:
+  imu_9_axis:
+    hz: 100
+    period_ms: 10
+    files: [imu_latest.txt, imu_data.csv]
+  encoder:
+    hz: 100
+    period_ms: 10
+    files: [encoder_latest.txt, encoder_data.csv]
+  gps_nmea:
+    hz: 10
+    period_ms: 100
+    files: [gps_nmea_latest.txt, gps_nmea_log.txt]
+  radar_targets:
+    hz: 2
+    period_ms: 500
+    files: [radar_latest.csv, radar_data.csv]
+  camera_rgb:
+    hz: 2
+    period_ms: 500
+    files: [IMG_7257.jpg, camera_frames/*.jpg]
+  lidar_point_clouds:
+    hz: 2
+    period_ms: 500
+    files: [lidar_front_test.pcd, lidar_left_test.pcd, lidar_right_test.pcd, lidar_pcd_frames/*.pcd, lidar_point_cloud.csv]

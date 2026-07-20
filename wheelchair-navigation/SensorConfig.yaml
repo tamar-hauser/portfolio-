@@ -1,0 +1,80 @@
+# הגדרות כלליות למערכת הצירים המרכזית (Base Link)
+global_frame: "wheelchair_center"
+
+# הגדרות ברירת מחדל לסינון לידאר (כדי לא לחזור על זה לכל חיישן בנפרד)
+default_lidar_config: &lidar_defaults
+  ring_size: 30
+  roi:
+    min_pt: [-50.0, -20.0, -2.0]
+    max_pt: [50.0, 20.0, 2.0]
+    voxel_size: 0.1
+    min_neighbors: 5
+    search_radius: 0.2
+    min_intensity: 10.0
+    max_dist_pts: 0.3
+    min_points: 10
+    max_points: 5000
+
+sensors:
+  # --- חיישני לידאר ---
+  lidar_front:
+    <<: *lidar_defaults  # משתמש בהגדרות ברירת המחדל למעלה
+    rotation:
+      - [1.0, 0.0, 0.0]
+      - [0.0, 1.0, 0.0]
+      - [0.0, 0.0, 1.0]
+    translation: [0.5, 0.0, 0.4] 
+
+  lidar_right:
+    <<: *lidar_defaults
+    rotation:
+      - [0.0, 1.0, 0.0]
+      - [-1.0, 0.0, 0.0]
+      - [0.0, 0.0, 1.0]
+    translation: [0.3, -0.4, 0.4]
+
+  lidar_left:
+    <<: *lidar_defaults
+    rotation:
+      - [0.0, -1.0, 0.0]
+      - [1.0, 0.0, 0.0]
+      - [0.0, 0.0, 1.0]
+    translation: [0.3, 0.4, 0.4]
+
+  # --- חיישני ראייה ורדאר ---
+  camera_main:
+    ring_size: 15
+    rotation:
+      - [0.866, -0.5, 0.0]
+      - [0.5, 0.866, 0.0]
+      - [0.0, 0.0, 1.0]
+    translation: [0.4, 0.0, 1.2]
+
+  radar_front:
+    ring_size: 15
+    rotation:
+      - [1.0, 0.0, 0.0]
+      - [0.0, 1.0, 0.0]
+      - [0.0, 0.0, 1.0]
+    translation: [0.55, 0.0, 0.2]
+
+  # --- חיישני תנועה ומיקום ---
+  imu_internal:
+    ring_size: 100
+    rotation:
+      - [1.0, 0.0, 0.0]
+      - [0.0, 1.0, 0.0]
+      - [0.0, 0.0, 1.0]
+    translation: [0.0, 0.0, 0.3]
+
+  gps_receiver:
+    ring_size: 15
+    translation: [0.0, 0.0, 1.5]
+
+  encoder_left:
+    ring_size: 100
+    translation: [0.0, 0.35, 0.0]
+
+  encoder_right:
+    ring_size: 100
+    translation: [0.0, -0.35, 0.0]
