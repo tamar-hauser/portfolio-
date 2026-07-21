@@ -10,6 +10,9 @@ Full autonomous navigation system for a wheelchair robot, simulated in **Webots*
 - Built a live 3D Octomap + 2D costmap from LiDAR scans for obstacle avoidance, and tracked dynamic objects with the Hungarian Algorithm + ICP
 - Designed a multi-threaded producer-consumer architecture (11 workers) and a React + Node.js monitoring dashboard backed by SQLite
 
+![Webots simulation running the full multi-threaded navigation stack](docs/simulation-screenshot.png)
+*Webots simulation with pedestrians and planned path, alongside the console log of the system booting its full thread architecture (NavigationManager, FactorGraphManager, SensorConsumer, ThreadGrafFector...).*
+
 ---
 
 ## System Overview
